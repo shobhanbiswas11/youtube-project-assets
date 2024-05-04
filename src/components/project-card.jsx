@@ -14,7 +14,16 @@ import { PlusIcon } from "lucide-react";
 import ColorForm from "./color-form";
 import { Button } from "./ui/button";
 
-export default function ProjectCard({ name, description, colors }) {
+export default function ProjectCard({
+  handleUpdate,
+  project: { id, name, description, colors },
+}) {
+  async function handleAdd(colorHex) {
+    await handleUpdate(id, {
+      colors: [...colors, colorHex],
+    });
+  }
+
   return (
     <Card>
       <CardHeader>
@@ -43,7 +52,7 @@ export default function ProjectCard({ name, description, colors }) {
               </Button>
             </PopoverTrigger>
             <PopoverContent>
-              <ColorForm />
+              <ColorForm handleAdd={handleAdd} />
             </PopoverContent>
           </Popover>
         </div>

@@ -20,7 +20,7 @@ export default function ProjectForm({ handleAdd }) {
   });
 
   function onSubmit(values) {
-    handleAdd(values.colorHex);
+    handleAdd(values);
   }
 
   return (
