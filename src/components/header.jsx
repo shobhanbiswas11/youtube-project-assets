@@ -17,14 +17,17 @@ export default function Header({ email, logout }) {
 
         <div>
           <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger className="flex items-center">
+              <span className="mr-2">{email}</span>
               <Avatar>
-                <AvatarFallback />
+                <AvatarFallback>
+                  {(email || "")[0].toUpperCase()}
+                </AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem>
-                <LogOut className="mr-2 h-4 w-4" />
+              <DropdownMenuItem onClick={logout}>
+                <LogOut className="mr-8 h-4 w-4" />
                 <span>Log out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>

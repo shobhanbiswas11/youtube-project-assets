@@ -1,0 +1,23 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-projetassetssandbox-prod-e3f75-authRole",
+      "UnauthRoleArn": "arn:aws:iam::905418265580:role/amplify-projetassetssandbox-prod-e3f75-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::905418265580:role/amplify-projetassetssandbox-prod-e3f75-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-projetassetssandbox-prod-e3f75-deployment",
+      "UnauthRoleName": "amplify-projetassetssandbox-prod-e3f75-unauthRole",
+      "StackName": "amplify-projetassetssandbox-prod-e3f75",
+      "StackId": "arn:aws:cloudformation:ap-south-1:905418265580:stack/amplify-projetassetssandbox-prod-e3f75/0f39a340-09de-11ef-9122-0606155f89a7",
+      "AmplifyAppId": "dy4xmnldi1lwv"
+    },
+    "categories": {
+      "auth": {
+        "projetassetssandbox421d93f1": {}
+      },
+      "api": {
+        "projetassetssandbox": {}
+      }
+    }
+  }
+}

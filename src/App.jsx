@@ -4,6 +4,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import { Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 import { addProject, listProject, updateProject } from "./api/project";
@@ -11,7 +12,7 @@ import ProjectCard from "./components/project-card";
 import ProjectForm from "./components/project-form";
 import { Button } from "./components/ui/button";
 
-function App() {
+function App({ user, signOut }) {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header email={user.signInDetails.loginId} logout={signOut} />
       <div className="container max-w-screen-lg grid grid-cols-2 gap-5 mt-10">
         {projects.map((project) => (
           <ProjectCard
@@ -68,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
